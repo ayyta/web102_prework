@@ -21,6 +21,12 @@ body {
 
 .stats-container {
     display: flex;
+    
+    align-items: center;
+    background-color: rgb(51, 185, 230);
+
+    cursor: pointer;
+    box-shadow: 0 0 30px lightblue;
 }
 
 .stats-card {
