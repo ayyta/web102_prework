@@ -28,8 +28,17 @@ const gamesContainer = document.getElementById("games-container");
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
 
+    let gameHTML = ''
     // loop over each item in the data
+    games.forEach(game => {
+        gameHTML += `<div class="game-card">
+            <img class="game-card" src="${game.img}"></img>
+            <p>Name: ${game.name}</p>
+            <p>Description: ${game.description}</p>
+        </div>`
+    })
 
+    gamesContainer.innerHTML += gameHTML
 
         // create a new div element, which will become the game card
 
@@ -50,6 +59,8 @@ function addGamesToPage(games) {
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
 
+
+addGamesToPage(GAMES_JSON)
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
