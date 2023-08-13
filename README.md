@@ -1,10 +1,10 @@
-# WEB102 Prework - *Name of App Here*
+# WEB102 Prework - Sea Monster Crowdfunding Prework Website
 
-Submitted by: **Your Name Here**
+Submitted by: Alvis Yong
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+Sea Monster Crowdfunding Prework Website is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: 3 hours spent in total
 
 ## Required Features
 
@@ -17,16 +17,18 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [ ] Navigation bar that displays searched games by name
+* [ ] Bolded Game Name
+* [ ] Displays goal and pledged from each game
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzFpdm5yODJ3bHM4cmNhbzVwd3puZ2ZxZ3pnaXQ0Ym1rNTh2OWcydCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JYwOlvZW7ZSAkwhGgL/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with LiceCAP
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -34,7 +36,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I was finding difficulty implementing the navigation bar because I didn't know how to compare case sensitive input to game names. I figure it out by lowercasing both the input and game name and comparing the strings that in order to find the game the user wants.
 
 ## License
 
