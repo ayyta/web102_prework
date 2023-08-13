@@ -33,8 +33,10 @@ function addGamesToPage(games) {
     games.forEach(game => {
         gameHTML += `<div class="game-card">
             <img class="game-card" src="${game.img}"></img>
-            <p>Name: ${game.name}</p>
-            <p>Description: ${game.description}</p>
+            <p class="game-name">${game.name}</p>
+            <p>${game.description}</p>
+            <p>Goal: $${game.goal.toLocaleString('en-US')}</p>
+            <p>Total Pledged $${game.pledged.toLocaleString('en-US')}</p>
         </div>`
     })
 
@@ -156,7 +158,6 @@ let totalUnfundedGames = GAMES_JSON.reduce( (total, game) => {
     let unfunded = game.pledged < game.goal
     return total + (unfunded ? 1: 0)
 }, 0)
-console.log(totalUnfundedGames)
 
 // create a string that explains the number of unfunded games using the ternary operator
 let totalRaised = GAMES_JSON.reduce((total, games) => {
@@ -183,7 +184,56 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+let [firstGame, secondGame,] = sortedGames
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
-
+firstGameContainer.innerHTML += `<div>${firstGame.name}</div>`
 // do the same for the runner up item
+secondGameContainer.innerHTML += `<div>${secondGame.name}</div>`
+
+function searchFunction (input) {
+
+    const inputValue = input.target.value.toLowerCase();
+    deleteChildElements(gamesContainer);
+
+    console.log(inputValue);
+    const inputLength = inputValue.length;
+    let gameList = [];
+    GAMES_JSON.forEach ((game) => {
+
+        return inputValue == game.name.substring(0, inputLength).toLowerCase() ? gameList.push(game) : NaN;
+    })
+
+
+    addGamesToPage(gameList)
+
+    searchBtn.removeEventListener('click', search)
+
+}
+
+
+
+const searchInput = document.querySelector('.search-bar');
+searchInput.addEventListener('input', function(input) {
+    const inputValue = input.target.value.toLowerCase();
+    deleteChildElements(gamesContainer);
+
+    console.log(inputValue);
+    const inputLength = inputValue.length;
+    let gameList = [];
+    GAMES_JSON.forEach ((game) => {
+
+        return inputValue == game.name.substring(0, inputLength).toLowerCase() ? gameList.push(game) : NaN;
+    })
+
+
+    addGamesToPage(gameList)
+
+    searchBtn.removeEventListener('click', search)
+});
+
+
+const searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener('click', search)
+
+
